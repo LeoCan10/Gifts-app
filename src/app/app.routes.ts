@@ -4,7 +4,7 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     loadComponent: () => import('./gifs/pages/dashboard-page/dashboard-page.component'),
-  },
+    children: [
 
   {
     path: 'trending',
@@ -15,6 +15,15 @@ export const routes: Routes = [
     path: 'search',
     loadComponent: () => import('./gifs/pages/search-page/search-page.component'),
   },
+
+  {
+    path: '**',
+    redirectTo: 'trending',
+  }
+
+    ],
+  },
+
 
   {
     path: '**',
